@@ -21,8 +21,6 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>Biltvätt | Rekondbolaget AB | Strömstad</title>
-          <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet"></link>
         </Head>
         <body>
           <Main />
