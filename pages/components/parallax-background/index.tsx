@@ -31,6 +31,7 @@ const Container = styled.div<ContainerProps>`
   position: fixed;
   right: 0;
   top: 0;
+  z-index: -200;
 `;
 
 function debounce(interval: number, fn: Function): Function {
