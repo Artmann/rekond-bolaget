@@ -1,7 +1,9 @@
 import React from 'react';
-import ParallaxBackground from './components/parallax-background';
 import styled from 'styled-components';
-import { CenteredSection } from './components/section';
+
+import ParallaxBackground from '../components/parallax-background';
+import Pricing, { Product } from '../components/pricing/pricing';
+import { CenteredSection } from '../components/section';
 
 const Container = styled.div`
   color: #4A5568;
@@ -25,6 +27,51 @@ const TagLine = styled.p`
 `;
 
 export default function Home() {
+  const products: Product[] = [
+    {
+      guarantee: '1 års garanti',
+      name: 'Ceramic Pro Sport',
+      price: '2.995:-',
+      protections: ['UV skydd', 'Högglans', 'Super hydrofobisk']
+    },
+    {
+      includes: ['Polering med nanopolish', '1 lager Ceramic PRO Light', 'Ceramic PRO Rain på vindruta och främre rutor'],
+      guarantee: '2 års garanti',
+      name: 'Ceramic Pro Brons',
+      price: '4.375:-',
+      protections: ['Reportålighet +', 'UV skydd', 'Super hydrofobisk']
+    },
+    {
+      includes: [
+        'Polering med Nanopolish',
+        '1 lager Ceramic Pro 9H',
+        '1 lager Ceramic Pro Light',
+        'Ceramic Pro Rain främre rutor'
+      ],
+      isPreferred: true,
+      guarantee: '3 års garanti',
+      name: 'Ceramic Pro Silver',
+      price: '6.000:-',
+      protections: ['Repor +++', 'UV Strålning', 'Kemikalier']
+    },
+    {
+      includes: [
+        'Polering med Nanopolish',
+        '4 lager Ceramic PRO 9H',
+        '2 extra lager Ceramic PRO 9H på fronten',
+        '2 lager Ceramic PRO Light',
+        'Ceramic PRO på all plast utvändigt',
+        'Ceramic PRO Rain på alla rutor',
+        '2 lager Ceramic PRO 9H/Strong på fälgar',
+        'Ceramic PRO Plast/Textil/Läder invändigt'
+      ],
+      guarantee: 'Livstids garanti',
+      name: 'Ceramic Pro Platinum',
+      price: '16.875:-',
+      protections: ['Repor ++', 'UV Strålning', 'Kemikalier']
+    },
+  ];
+
   return (
     <Container>
       <ParallaxBackground />
@@ -34,6 +81,10 @@ export default function Home() {
         <CenteredSection style={{ flexDirection: 'column' }}>
           <Logo alt="Rekondbolaget" src="/images/logo.webp" />
           <TagLine>WHEN QUALITY MATTERS</TagLine>
+        </CenteredSection>
+
+        <CenteredSection style={{ flexDirection: 'column' }}>
+          <Pricing products={ products } />
         </CenteredSection>
 
       </Content>
